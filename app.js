@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express()
 const connectToDB = require('./db/connection');
+const route = require('./routes/routes');
 
 const port = process.env.PORT || 3000;
+app.use(express.json());
+app.use(route);
 
 const start = async () => {
     try {
